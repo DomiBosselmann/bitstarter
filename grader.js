@@ -50,7 +50,7 @@ var assertURLExists = function(url) {
 };
 
 var cheerioHtmlFile = function(htmlfile) {
-    return cheerio.load(fs.readFileSync(htmlfile));
+    return cheerio.load(htmlfile);
 };
 
 var loadChecks = function(checksfile) {
@@ -75,7 +75,7 @@ var clone = function(fn) {
 };
 
 var performCheck = function (file, checks) {
-    var checkJson = checkHtmlFile(program.file, program.checks);
+    var checkJson = checkHtmlFile(file, checks);
     var outJson = JSON.stringify(checkJson, null, 4);
     return outJson;
 };
